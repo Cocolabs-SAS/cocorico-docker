@@ -1,0 +1,47 @@
+parameters:
+    database_host: 127.0.0.1
+    database_port: ~
+    database_name: cocorico
+    database_user: cocorico
+    database_password: cocorico
+    mongodb_server: mongodb://127.0.0.1:27017
+    mongodb_database_name: cocorico
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: ~
+    mailer_password: ~
+    mailer_port: null
+    secret: ThisTokenIsNotSoSecretChangeIt
+    use_assetic_controller: false
+    cocorico.assets_base_urls: http://localhost
+    router.request_context.host: localhost
+    router.request_context.scheme: http
+    router.request_context.base_url: ''
+    cocorico.admin: admin
+    cocorico.admin_translation: false
+    cocorico.translator.secret.key: ~
+    cocorico.facebook.app_id: none
+    cocorico.facebook.secret: none
+    cocorico.image_driver: imagick
+    cocorico.google_analytics: UA-64445856-1
+    cocorico.google_tag_manager: false
+    cocorico_geo.google_place_api_key: ~
+    cocorico_geo.google_place_server_api_key: ~
+    cocorico_geo.ipinfodb_api_key: ~
+    cocorico.deploy.host: fake.cocorico.prod
+    cocorico.deploy.dir: /fake/path
+    cocorico.deploy.user: fakeuser
+    cocorico.booking.expiration_delay: 2880
+    cocorico.booking.alert_expiration_delay: 120
+    cocorico.booking.alert_imminent_delay: 1440
+    cocorico.booking.validated_moment: 'start'
+    cocorico.booking.validated_delay: 0
+    cocorico.booking.acceptation_delay: 240
+    cocorico.bankwire_checking_simulation: false
+    cocorico_sms.enabled: false
+    cocorico_sms.ovh_endpoint_name: "ovh-eu"
+    cocorico_sms.ovh_application_key: "Application Key"
+    cocorico_sms.ovh_application_secret: "Application Secret"
+    cocorico_sms.ovh_consumer_key: "Consumer Key"
+    cocorico_sms.ovh_service_name: "Service Name"
+    cocorico_sms.ovh_debug: false
