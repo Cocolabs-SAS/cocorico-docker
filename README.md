@@ -20,17 +20,26 @@ Requirements
 Usage
 ----
 
-Run the container :
+Start the container:
 
 ``` bash
-docker run --name cocorico -ti -p 80:8000 -p 3306:3306 -p 27017:27017 -p 9001:9001  -v `pwd`:/cocorico -v `pwd`/tmp/mysql:/var/lib/mysql -v `pwd`/tmp/mongo:/data/db -e HOST_UID=$UID cocolabs/cocorico
+docker run --name cocorico -ti -p 80:8000 -p 3306:3306 -p 9001:9001 -p 27017:27017  -v `pwd`:/cocorico -v `pwd`/tmp/mysql:/var/lib/mysql -v `pwd`/tmp/mongo:/data/db -e HOST_UID=$UID cocolabs/cocorico
 ```
-Wait a few minutes and enjoy! [http://localhost](http://localhost)
 
-Connect to the container :
+Follow the progress of the installation: [http://localhost:9001/logtail/cocorico](http://localhost:9001/logtail/cocorico)
+
+Once the symfony server is running, enjoy Cocorico: [http://localhost](http://localhost)
+
+Connect to the container:
 
 ``` bash
 docker exec -it --user cocorico cocorico /bin/sh
+```
+
+Stop the container:
+
+``` bash
+docker kill cocorico && docker rm cocorico
 ```
 
 License

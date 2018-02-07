@@ -5,8 +5,8 @@ if [ ! -d /run/mysqld ]; then
 fi
 
 if [ ! -d /var/lib/mysql/cocorico ]; then
-    mysql_install_db --user=root
-    mysqld --user=root --bootstrap < /init/database.sql
+    mysql_install_db --user=root > /dev/null
+    mysqld --user=root --bootstrap --verbose=0 < /init/database.sql
 fi
 
-mysqld --user=root --console
+exec /usr/bin/mysqld --user=root --console
