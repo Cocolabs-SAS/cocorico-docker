@@ -1,14 +1,16 @@
-<h1 align="center">
-    <img src="http://docs.cocorico.io/images/logo_cocorico.png" alt="Cocorico"/>
-    <img src="https://www.docker.com/sites/default/files/horizontal.png" alt="Docker"/>
-</h1>
+
+[![Cocorico](http://docs.cocorico.io/images/logo_cocorico.png)](https://github.com/Cocolabs-SAS/cocorico)
+[![Docker](https://www.docker.com/sites/default/files/horizontal.png)](https://www.docker.com/)
 
 # Cocorico-Docker
 
-[![Build Status](https://travis-ci.org/Cocolabs-SAS/cocorico-docker.svg)](https://travis-ci.org/Cocolabs-SAS/cocorico-docker)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Docker Stars](https://img.shields.io/docker/stars/cocolabs/cocorico.svg?style=flat-square)](https://hub.docker.com/r/cocolabs/cocorico/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/cocolabs/cocorico.svg?style=flat-square)](https://hub.docker.com/r/cocolabs/cocorico/)
+[![Docker Automated build](https://img.shields.io/docker/automated/cocolabs/cocorico.svg?style=flat-square)](https://hub.docker.com/r/cocolabs/cocorico/)
+[![Docker Build Status](https://img.shields.io/docker/build/cocolabs/cocorico.svg?style=flat-square)](https://hub.docker.com/r/cocolabs/cocorico/)
+[![License](https://img.shields.io/github/license/Cocolabs-SAS/cocorico-docker.svg?style=flat-square)](https://github.com/Cocolabs-SAS/cocorico-docker/blob/master/LICENSE)
 
-The official Cocorico docker image that give you the ability to run Cocorico out of the box.
+The official [Cocorico docker image](https://hub.docker.com/r/cocolabs/cocorico/) that give you the ability to run Cocorico out of the box.
 
 ## Requirements
 
