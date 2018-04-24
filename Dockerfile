@@ -1,6 +1,7 @@
 FROM alpine:edge
 
 ENV COMPOSER_HOME "/home/cocorico"
+ENV COMPOSER_ALLOW_SUPERUSER=1
 ENV HOST_UID 1000
 
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
