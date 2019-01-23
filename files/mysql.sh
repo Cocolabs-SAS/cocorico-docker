@@ -9,4 +9,4 @@ if [ ! -d /var/lib/mysql/cocorico ]; then
     mysqld --user=root --bootstrap --verbose=0 < /init/database.sql
 fi
 
-exec /usr/bin/mysqld --user=root --console
+mysqld_safe --user=root --console
