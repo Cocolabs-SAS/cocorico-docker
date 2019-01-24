@@ -1,7 +1,6 @@
 FROM alpine:edge
 
-ENV COMPOSER_HOME "/home/cocorico"
-ENV HOST_UID 1000
+ENV COMPOSER_ALLOW_SUPERUSER=1 COMPOSER_HOME=/home/cocorico HOME=/home/cocorico HOST_UID=1000
 
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
     && apk --update add \
@@ -50,10 +49,15 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/reposit
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && composer global require hirak/prestissimo  \
     && groupadd cocorico && useradd -g cocorico --create-home cocorico \
+    && mkdir -p /data/db \
     && rm -rf /var/cache/apk/*
 
 ADD files /
 
 WORKDIR /cocorico
 
-ENTRYPOINT ["sh", "/entrypoint.sh"]
+VOLUME /cocorico /data/db /var/lib/mysql
+
+EXPOSE 3306 8000 27017
+
+ENTRYPOINT sh /entrypoint.sh

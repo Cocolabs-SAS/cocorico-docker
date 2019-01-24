@@ -1,17 +1,17 @@
 parameters:
-    database_host: 127.0.0.1
+    database_host: localhost
     database_port: ~
     database_name: cocorico
     database_user: cocorico
     database_password: cocorico
-    mongodb_server: mongodb://127.0.0.1:27017
+    mongodb_server: mongodb://localhost:27017
     mongodb_database_name: cocorico
     mailer_transport: smtp
-    mailer_host: 127.0.0.1
+    mailer_host: localhost
     mailer_user: ~
     mailer_password: ~
     mailer_port: null
-    secret: ThisTokenIsNotSoSecretChangeIt
+    secret: d69958a4fff6ba8f0f4fc4fc2657366ccf9dd0f3
     use_assetic_controller: false
     cocorico.assets_base_urls: http://localhost
     router.request_context.host: localhost

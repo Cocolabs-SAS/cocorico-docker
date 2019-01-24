@@ -24,16 +24,20 @@ if [[ ! $(mysql -u cocorico -pcocorico -e "USE cocorico; SHOW TABLES LIKE 'user'
     php app/console doctrine:fixtures:load -n
 fi
 
+if [ ! -d /data/db ]; then
+    php app/console doctrine:mongodb:schema:create
+fi
+
 if [ ! -f web/json/currencies.json ]; then
     php app/console cocorico:currency:update
 fi
 
-if [ ! -d web/css/compiled ]; then
-    php app/console asset:dump
+if [ ! -d web/bundles ]; then
+    php app/console assets:install --symlink
 fi
 
-if [ ! -d /data/db ]; then
-    php app/console doctrine:mongodb:schema:create
+if [[ ! -d web/css/compiled || ! -d web/js/compiled ]]; then
+    php app/console assetic:dump
 fi
 
 php app/console server:run 0.0.0.0:8000
