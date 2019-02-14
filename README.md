@@ -23,7 +23,7 @@ The official [Cocorico docker image](https://hub.docker.com/r/cocolabs/cocorico/
 Start the container:
 
 ``` bash
-docker run --name cocorico -ti -p 80:8000 -p 3306:3306 -p 9001:9001 -p 27017:27017  -v `pwd`:/cocorico -v `pwd`/tmp/mysql:/var/lib/mysql -v `pwd`/tmp/mongo:/data/db -e HOST_UID=$UID cocolabs/cocorico
+docker run --name cocorico -ti -p 80:80 -p 3306:3306 -p 9001:9001 -p 27017:27017  -v `pwd`:/cocorico -v `pwd`/tmp/mysql:/var/lib/mysql -v `pwd`/tmp/mongo:/data/db -e HOST_UID=$UID cocolabs/cocorico
 ```
 
 Once the symfony server is running, enjoy Cocorico: [http://localhost](http://localhost)
@@ -33,7 +33,7 @@ Also you can control processes with Supervisor: [http://localhost:9001](http://l
 Connect to the container:
 
 ``` bash
-docker exec -it --user cocorico cocorico /bin/sh
+docker exec -it --user cocorico cocorico sh
 ```
 
 Stop the container:

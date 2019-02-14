@@ -1,8 +1,11 @@
 FROM alpine:edge
 
-ENV COMPOSER_ALLOW_SUPERUSER=1 COMPOSER_HOME=/home/cocorico HOME=/home/cocorico HOST_UID=1000
+ENV COMPOSER_ALLOW_SUPERUSER=1 \
+    COMPOSER_HOME=/home/cocorico \
+    HOME=/home/cocorico \
+    HOST_UID=1000
 
-RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
     && apk --update add \
         curl \
         git \
@@ -11,6 +14,7 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/reposit
         mongodb \
         mysql \
         mysql-client \
+        nginx \
         php7 \
         php7-bcmath \
         php7-ctype \
@@ -18,6 +22,7 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/reposit
         php7-dom \
         php7-exif \
         php7-fileinfo \
+        php7-fpm \
         php7-gd \
         php7-iconv \
         php7-imagick \
@@ -47,7 +52,7 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/reposit
         shadow \
         supervisor \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && composer global require hirak/prestissimo  \
+    && composer global require hirak/prestissimo \
     && groupadd cocorico && useradd -g cocorico --create-home cocorico \
     && mkdir -p /data/db \
     && rm -rf /var/cache/apk/*
@@ -58,6 +63,6 @@ WORKDIR /cocorico
 
 VOLUME /cocorico /data/db /var/lib/mysql
 
-EXPOSE 3306 8000 27017
+EXPOSE 80 3306 27017
 
 ENTRYPOINT sh /entrypoint.sh

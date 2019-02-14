@@ -10,4 +10,4 @@ supervisord -c /etc/supervisord.conf
 
 sleep 5
 
-tail -f /var/log/supervisor/cocorico.log
+tail -f /var/log/supervisor/bootstrap.log
