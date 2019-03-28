@@ -20,24 +20,24 @@ while !(mysqladmin -ucocorico -pcocorico ping &> /dev/null); do
 done
 
 if [[ ! -f /var/lib/mysql/cocorico/db.opt ]]; then
-    php app/console doctrine:schema:update --force
-    php app/console doctrine:fixtures:load -n
+    php bin/console doctrine:schema:update --force
+    php bin/console doctrine:fixtures:load -n
 fi
 
 if [[ ! -d /data/db ]]; then
-    php app/console doctrine:mongodb:schema:create
+    php bin/console doctrine:mongodb:schema:create
 fi
 
 if [[ ! -f web/json/currencies.json ]]; then
-    php app/console cocorico:currency:update
+    php bin/console cocorico:currency:update
 fi
 
 if [[ ! -d web/bundles ]]; then
-    php app/console assets:install --symlink
+    php bin/console assets:install --symlink
 fi
 
 if [[ ! -d web/css/compiled || ! -d web/js/compiled ]]; then
-    php app/console assetic:dump
+    php bin/console assetic:dump
 fi
 
 echo 'cocorico is alive'
