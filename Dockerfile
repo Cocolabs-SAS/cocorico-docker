@@ -1,11 +1,11 @@
-FROM alpine:edge
+FROM alpine:3.8
 
 ENV COMPOSER_ALLOW_SUPERUSER=1 \
     COMPOSER_HOME=/home/cocorico \
     HOME=/home/cocorico \
     HOST_UID=1000
 
-RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.8/main' >> /etc/apk/repositories \
     && apk --update add \
         curl \
         git \
