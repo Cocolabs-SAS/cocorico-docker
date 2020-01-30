@@ -27,6 +27,11 @@ docker run --name cocorico -ti -p 80:80 -p 3306:3306 -p 9001:9001 -p 27017:27017
 ```
 
 Once the symfony server is running, enjoy Cocorico: [http://localhost](http://localhost)
+  
+  super-admin@cocorico.rocks
+  
+  super-admin
+
 
 Also you can control processes with Supervisor: [http://localhost:9001](http://localhost:9001)
 
